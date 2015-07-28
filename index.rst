@@ -7,11 +7,12 @@ Benchmarks documents
 ======================================
 * :ref:`mongodb-sysbench-hppro2`
 * :ref:`linkbench-mysql-sm-perf01-jul2015`
+* :ref:`mongodb-ycsb-ct720-jul2015.1`
 
 Servers
 ==================
 * :ref:`hppro2-server`
-
+* :ref:`ct720-server`
 
 .. toctree::
    :maxdepth: 2
