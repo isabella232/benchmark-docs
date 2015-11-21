@@ -1,0 +1,20 @@
+.. _ct720-server:
+
+==================
+CT 720
+==================
+
+Server specification
+
+* Model
+	* Dell PowerEdge R720
+* CPU
+	* Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz 
+	* physical = 2, cores = 16, virtual = 32(hyper-threaded)
+* Memory
+	* 188GB
+* IO
+	* Storage1: 8 disks in RAID10, PERC H710 Mini/512MB
+		* Disks: ST9750420AS
+	* Storage2: Fusion-io ioDrive2 Duo 2.41TB
+* OS: CentOS 6.4
