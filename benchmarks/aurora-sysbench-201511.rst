@@ -20,7 +20,9 @@ Data sizes
 -----------
 
 Initial dataset: 32 sysbench tables, 50mln rows each. It corresponds to about 400GB of data.
+
 Testing sizes: for benchmarks we vary max amount of rows used by sysbench: 1mln, 2.5mln, 5mln, 10mln, 25mln, 50mln.
+
 In this way we emulate different datasizes from fully in-memory to heavy-IO access.
 
 Instance sizes.
@@ -29,10 +31,11 @@ Actually it is quite complicated to find equal configuration (in both performanc
 to compare Percona Server running on EC2 instance against Amazon Aurora.
 
 Amazon Aurora:
-db.r3.xlarge instance (4 virtual CPUS + 30GB memory)
-Monthly computing Cost (1-YEAR TERM, No Upfront): $277.40
-Monthly Storage cost: $0.100 per GB-month * 400 GB = $40
-+ extra $0.200 per 1 million IO requests
+
+* db.r3.xlarge instance (4 virtual CPUS + 30GB memory)
+* Monthly computing Cost (1-YEAR TERM, No Upfront): $277.40
+* Monthly Storage cost: $0.100 per GB-month * 400 GB = $40
+* extra $0.200 per 1 million IO requests
 
 Total cost (per month, excluding extra per IO requests): `$311.40`
 
