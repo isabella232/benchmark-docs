@@ -189,11 +189,9 @@ There are few points to highlight:
 
 * Even in long runs (2 hours) I do not see a fluctuation in results; the throughput is stable
 * I actually made one run for 48 hour, still no fluctuations
-* For Percona Server, as expected, better storage gives better throughput, especially for IO-heavy cases
-* Amazon Aurora shows worse results with smaller datasizes; and Aurora outperforms Percona Server (with general purpose SSD and provisioned SSD 2000IOPS volumes)
-in big datasizes.
-* It looks like Amazon Aurora does not benefit from adding extra memory - the throughput does not grow much with small datasizes.
-I think it proves my assumption that Aurora has some kind of write-through cache, which shows better results in IO-heavy workloads.
+* For Percona Server, as expected, better storage gives better throughput; 3000 IOPS is better then Amazon Aurora especially for IO-heavy cases
+* Amazon Aurora shows worse results with smaller datasizes; and Aurora outperforms Percona Server (with general purpose SSD and provisioned SSD 2000IOPS volumes) when it comes to big datasizes.
+* It looks like Amazon Aurora does not benefit from adding extra memory - the throughput does not grow much with small datasizes. I think it proves my assumption that Aurora has some kind of write-through cache, which shows better results in IO-heavy workloads.
 
 Appendix
 --------
