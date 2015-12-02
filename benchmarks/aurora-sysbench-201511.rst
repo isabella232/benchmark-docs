@@ -6,8 +6,8 @@ Amazon Aurora Sysbench benchmark
 
 Benchmark date: Nov 2015.
 
-The goal was to evaluate Amazon Aurora performance comparing to Percona Server.
-The workload is `sysbench <https://github.com/akopytov/sysbench>`_ v0.5.
+The goal was to evaluate Amazon Aurora performance compared to Percona Server.
+The workload is 'sysbench <https://github.com/akopytov/sysbench>'_ v0.5.
 Scripts used for testing:
 
 * oltp.lua (read-write)
@@ -16,15 +16,15 @@ Scripts used for testing:
 
 Percona Server version: 5.6.27-75.0
 
-Data sizes
+Data Sizes
 -----------
 
-Initial dataset: 32 sysbench tables, 50mln rows each. It corresponds to about 400GB of data.
+* **Initial dataset**. 32 sysbench tables, 50 million (mln) rows each. It corresponds to about 400GB of data.
 
-Testing sizes: for benchmarks we vary max amount of rows used by sysbench: 1mln, 2.5mln, 5mln, 10mln, 25mln, 50mln.
+* **Testing sizes**. For benchmarks, we vary the maximum amount of rows used by sysbench: 1mln, 2.5mln, 5mln, 10mln, 25mln, 50mln.
 
-In the chart results marked in thousands of rows as: 1000, 2500, 5000, 10000, 25000, 50000.
-That is `1000` corresponds to 1mln of rows.
+In the chart, the results are marked in thousands of rows: 1000, 2500, 5000, 10000, 25000, 50000.
+In other words, "1000" corresponds to 1mln of rows.
 
 Estimated datasizes:
 
@@ -34,39 +34,39 @@ Estimated datasizes:
 | Size in GB:        |    8 |   20 |   40 |    80 |   200 |   400 |
 +--------------------+------+------+------+-------+-------+-------+
 
-In this way we emulate different datasizes from fully in-memory (1mln rows) to heavy-IO access (50 mln rows)
+This is how we were able to emulate different datasizes, from fully in-memory (1mln rows) to heavy-IO access (50 mln rows).
 
-Instance sizes.
+Instance Sizes.
 ---------------
-Actually it is quite complicated to find equal configuration (in both performance and price aspects)
-to compare Percona Server running on EC2 instance against Amazon Aurora.
+It is actually very complicated to find an equal configuration (in both performance and price aspects)
+to use as a comparison between Percona Server running on an EC2 instance, and Amazon Aurora.
 
 Amazon Aurora:
 
 * db.r3.xlarge instance (4 virtual CPUS + 30GB memory)
-* Monthly computing Cost (1-YEAR TERM, No Upfront): $277.40
-* Monthly Storage cost: $0.100 per GB-month * 400 GB = $40
+* Monthly computing cost (1-YEAR TERM, No Upfront): $277.40
+* Monthly storage cost: $0.100 per GB-month * 400 GB = $40
 * extra $0.200 per 1 million IO requests
 
-Total cost (per month, excluding extra per IO requests): `$311.40`
+Total cost (per month, excluding extra per IO requests): $311.40
 
 
 Percona Server
 r3.xlarge instance (4 virtual CPUS + 30GB memory)
-Monthly computing cost (1-YEAR TERM, No Upfront): $160.6
+Monthly computing cost (1-YEAR TERM, No Upfront): $160.60
 
 For the storage we will use 3 options:
 
-* general purpose SSD volume (marked as `ps` in charts), 500GB size, 1500/3000 ios, cost: $0.10 per GB-month * 500 = $50
-* Provisioned IOPS SSD volume (marked as `ps-io3000`), 500GB, 3000 IOP = $0.125 per GB-month  * 500 + $0.065 per provisioned IOPS-month * 3000 = $62.5 + $195 = $257.5
-* Provisioned IOPS SSD volume (marked as `ps-io2000`), 500GB, 2000 IOP = $0.125 per GB-month  * 500 + $0.065 per provisioned IOPS-month * 2000 = $62.5 + $130 = $192.5
+* General purpose SSD volume (marked as "ps" in charts), 500GB size, 1500/3000 ios, cost: $0.10 per GB-month * 500 = $50
+* Provisioned IOPS SSD volume (marked as "ps-io3000"), 500GB, 3000 IOP = $0.125 per GB-month  * 500 + $0.065 per provisioned IOPS-month * 3000 = $62.5 + $195 = $257.5
+* Provisioned IOPS SSD volume (marked as "ps-io2000"), 500GB, 2000 IOP = $0.125 per GB-month  * 500 + $0.065 per provisioned IOPS-month * 2000 = $62.5 + $130 = $192.5
 
-So corresponding total costs (per month) for used EC2 instances are: `$210.6`; `$418.1`; `$353.1`
+So corresponding total costs (per month) for used EC2 instances are: $210.60; $418.10; $353.10
 
-Client setup
+Client Setup
 ------------
 
-For client we use t2.medium instance.
+For the client we use t2.medium instance.
 Sysbench runs with 16 users threads, which should be adequate to load the database instance.
 
 
@@ -82,26 +82,26 @@ sysbench script:
 Results
 -------
 
-Results for Amazon Aurora; 2 hours run, 10 sec resolution, to show variance of results
+Results for Amazon Aurora: 2 hours run, 10 second resolution, to show variance of results.
 
 .. image:: aurora-sysbench-201511/Aurora-timeline.png
 	:width: 800px
 	:height: 1200px
 
-Results for Percona Server; 2 hours run, 10 sec resolution, to show variance of results
+Results for Percona Server: 2 hours run, 10 second resolution, to show variance of results.
 
 .. image:: aurora-sysbench-201511/PerconaServer-timeline.png
 	:width: 800px
 	:height: 1200px
 
 
-Results (averaged) Percona Server vs Amazon Aurora, in relation to datasize
+Results (averaged) for Percona Server vs. Amazon Aurora, in relation to datasize:
 
 .. image:: aurora-sysbench-201511/PerconaServer-vs-Aurora.png
 	:width: 800px
 	:height: 800px
 
-Results in tabular format, where I also add `ops cost` column, which is calculates as `instance_cost_per_month`/`ops` (less is better):
+Results in tabular format, where I also added an "ops cost" column. This is calculated as "instance_cost_per_month"/"ops" (less is better):
 
 
 =========  =====  ================  =========  =========
@@ -185,18 +185,18 @@ ps-io3000  50000  update_non_index  2259.8432  0.1850128
 Observations
 ------------
 
-There are few points to highlight:
+There are few important points to highlight:
 
-* Even in long runs (2 hours) I do not see a fluctuation in results; the throughput is stable
-* I actually made one run for 48 hour, still no fluctuations
-* For Percona Server, as expected, better storage gives better throughput; 3000 IOPS is better then Amazon Aurora especially for IO-heavy cases
-* Amazon Aurora shows worse results with smaller datasizes; and Aurora outperforms Percona Server (with general purpose SSD and provisioned SSD 2000IOPS volumes) when it comes to big datasizes.
-* It looks like Amazon Aurora does not benefit from adding extra memory - the throughput does not grow much with small datasizes. I think it proves my assumption that Aurora has some kind of write-through cache, which shows better results in IO-heavy workloads.
+* Even in long runs (2 hours) I didn't see a fluctuation in results. The throughput is stable.
+* I actually made one run for 48 hours. There were still no fluctuations.
+* For Percona Server, as expected, better storage gives better throughput. 3000 IOPS is better then Amazon Aurora, especially for IO-heavy cases
+* Amazon Aurora shows worse results with smaller datasizes. Aurora outperforms Percona Server (with general purpose SSD and provisioned SSD 2000IOPS volumes) when it comes to big datasizes.
+* It appears that Amazon Aurora does not benefit from adding extra memory - the throughput does not grow much with small datasizes. I think it proves my assumption that Aurora has some kind of write-through cache, which shows better results in IO-heavy workloads.
 
 Appendix
 --------
 
-`Raw results and scripts <https://github.com/Percona-Lab/benchmark-results/tree/aurora-sysbench-201511>`_
+'Raw results and scripts <https://github.com/Percona-Lab/benchmark-results/tree/aurora-sysbench-201511>'_
 
 Percona Server my.cnf file:
 
