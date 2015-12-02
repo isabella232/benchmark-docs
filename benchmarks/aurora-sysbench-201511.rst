@@ -101,14 +101,12 @@ Results (averaged) Percona Server vs Amazon Aurora, in relation to datasize
 	:width: 800px
 	:height: 800px
 
-Results in tabular format:
-
-I also add `ops cost` column, which is `instance_cost_per_month`/`ops`:
+Results in tabular format, where I also add `ops cost` column, which is calculates as `instance_cost_per_month`/`ops`:
 
 
-=========  =====  ================  ========= ==========
-Server      Size  workload               ops   ops cost
-=========  =====  ================  ========= ==========
+=========  =====  ================  =========  =========
+Server      Size  workload               ops    ops cost
+=========  =====  ================  =========  =========
 aurora      1000  oltp              1548.6490  0.2010785
 ps          1000  oltp              2894.6190  0.0727557
 ps-io2000   1000  oltp              2903.5302  0.1216106
