@@ -101,6 +101,87 @@ Results (averaged) Percona Server vs Amazon Aurora, in relation to datasize
 	:width: 800px
 	:height: 800px
 
+Results in tabular format:
+
+
+=========  =====  ================  =========
+Server      Size  workload               ops
+=========  =====  ================  =========
+aurora      1000  oltp              1548.6490
+ps          1000  oltp              2894.6190
+ps-io2000   1000  oltp              2903.5302
+ps-io3000   1000  oltp              2889.8827
+aurora      2500  oltp              1653.0761
+ps          2500  oltp              2009.9911
+ps-io2000   2500  oltp              2809.9707
+ps-io3000   2500  oltp              2783.0859
+aurora      5000  oltp              1340.6739
+ps          5000  oltp               955.1150
+ps-io2000   5000  oltp              1452.4108
+ps-io3000   5000  oltp              2132.9517
+aurora     10000  oltp              1139.2001
+ps         10000  oltp               596.4517
+ps-io2000  10000  oltp               912.3408
+ps-io3000  10000  oltp              1420.1322
+aurora     25000  oltp               919.9039
+ps         25000  oltp               418.1550
+ps-io2000  25000  oltp               620.7486
+ps-io3000  25000  oltp               964.7347
+aurora     50000  oltp               824.9817
+ps         50000  oltp               340.6678
+ps-io2000  50000  oltp               509.2594
+ps-io3000  50000  oltp               782.1511
+aurora      1000  update_index      1541.7061
+ps          1000  update_index      3230.3314
+ps-io2000   1000  update_index      4228.8192
+ps-io3000   1000  update_index      4279.5530
+aurora      2500  update_index      1440.2293
+ps          2500  update_index      2062.2836
+ps-io2000   2500  update_index      3105.0119
+ps-io3000   2500  update_index      3943.8099
+aurora      5000  update_index      1366.3545
+ps          5000  update_index      1492.3974
+ps-io2000   5000  update_index      2315.1324
+ps-io3000   5000  update_index      3465.8786
+aurora     10000  update_index      1296.2791
+ps         10000  update_index      1189.4472
+ps-io2000  10000  update_index      1847.5573
+ps-io3000  10000  update_index      2789.7427
+aurora     25000  update_index      1209.9782
+ps         25000  update_index       938.9404
+ps-io2000  25000  update_index      1441.1059
+ps-io3000  25000  update_index      2209.2510
+aurora     50000  update_index      1140.1554
+ps         50000  update_index       804.7809
+ps-io2000  50000  update_index      1230.8842
+ps-io3000  50000  update_index      1881.0907
+aurora      1000  update_non_index  2029.6650
+ps          1000  update_non_index  3882.0086
+ps-io2000   1000  update_non_index  4181.7776
+ps-io3000   1000  update_non_index  4483.4039
+aurora      2500  update_non_index  2070.1151
+ps          2500  update_non_index  3388.3528
+ps-io2000   2500  update_non_index  4247.6228
+ps-io3000   2500  update_non_index  4379.8502
+aurora      5000  update_non_index  2047.9839
+ps          5000  update_non_index  2114.0799
+ps-io2000   5000  update_non_index  3359.1397
+ps-io3000   5000  update_non_index  4045.8934
+aurora     10000  update_non_index  1969.5656
+ps         10000  update_non_index  1531.5859
+ps-io2000  10000  update_non_index  2372.8680
+ps-io3000  10000  update_non_index  3719.5061
+aurora     25000  update_non_index  1777.8730
+ps         25000  update_non_index  1197.7339
+ps-io2000  25000  update_non_index  1780.2134
+ps-io3000  25000  update_non_index  2755.3000
+aurora     50000  update_non_index  1709.5230
+ps         50000  update_non_index  1072.4871
+ps-io2000  50000  update_non_index  1428.6931
+ps-io3000  50000  update_non_index  2259.8432
+=========  =====  ================  =========
+
+
 Observations
 ------------
 
