@@ -23,6 +23,18 @@ Initial dataset: 32 sysbench tables, 50mln rows each. It corresponds to about 40
 
 Testing sizes: for benchmarks we vary max amount of rows used by sysbench: 1mln, 2.5mln, 5mln, 10mln, 25mln, 50mln.
 
+In the chart results marked in thousands of rows as: 1000, 2500, 5000, 10000, 25000, 50000.
+That is `1000` corresponds to 1mln of rows.
+
+Estimated datasizes:
+
++--------------------+------+------+------+-------+-------+-------+
+| rows, in thousand: | 1000 | 2500 | 5000 | 10000 | 25000 | 50000 |
++--------------------+------+------+------+-------+-------+-------+
+| Size in GB:        |   8  |  20  |  40  |   80  |  200  | 400   |
++--------------------+------+------+------+-------+-------+-------+
+
+
 In this way we emulate different datasizes from fully in-memory to heavy-IO access.
 
 Instance sizes.
@@ -71,6 +83,21 @@ sysbench script:
 Results
 -------
 
+Results for Amazon Aurora; 2 hours run, 10 sec resolution, to show variance of results
+
 .. image:: aurora-sysbench-201511/Aurora-timeline.png
 	:width: 800px
-	:height: 600px
+	:height: 1200px
+
+Results for Percona Server; 2 hours run, 10 sec resolution, to show variance of results
+
+.. image:: aurora-sysbench-201511/PerconaServer-timeline.png
+	:width: 800px
+	:height: 1200px
+
+
+Results (averaged) Percona Server vs Amazon Aurora, in relation to datasize
+
+.. image:: aurora-sysbench-201511/PerconaServer-vs-Aurora.png
+	:width: 800px
+	:height: 800px
