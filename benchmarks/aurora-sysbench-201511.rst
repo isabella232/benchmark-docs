@@ -46,7 +46,7 @@ Amazon Aurora:
 * db.r3.xlarge instance (4 virtual CPUS + 30GB memory)
 * Monthly computing cost (1-YEAR TERM, No Upfront): $277.40
 * Monthly storage cost: $0.100 per GB-month * 400 GB = $40
-* extra $0.200 per 1 million IO requests
+* Extra $0.200 per 1 million IO requests
 
 Total cost (per month, excluding extra per IO requests): $311.40
 
