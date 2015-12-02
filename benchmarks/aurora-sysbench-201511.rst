@@ -7,7 +7,7 @@ Amazon Aurora Sysbench benchmark
 Benchmark date: Nov 2015.
 
 The goal was to evaluate Amazon Aurora performance compared to Percona Server.
-The workload is 'sysbench <https://github.com/akopytov/sysbench>'_ v0.5.
+The workload is `sysbench <https://github.com/akopytov/sysbench>`_ v0.5.
 Scripts used for testing:
 
 * oltp.lua (read-write)
@@ -196,7 +196,7 @@ There are few important points to highlight:
 Appendix
 --------
 
-'Raw results and scripts <https://github.com/Percona-Lab/benchmark-results/tree/aurora-sysbench-201511>'_
+`Raw results and scripts <https://github.com/Percona-Lab/benchmark-results/tree/aurora-sysbench-201511>`_
 
 Percona Server my.cnf file:
 
