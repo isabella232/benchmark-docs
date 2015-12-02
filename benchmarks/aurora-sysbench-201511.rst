@@ -67,3 +67,10 @@ sysbench script:
 	do
 	sysbench --test=tests/db/oltp.lua --oltp_tables_count=32 --mysql-user=root --mysql_table_engine=InnoDB --num-threads=16 --oltp-table-size=${i}000 --rand-type=pareto --rand-init=on --report-interval=10 --mysql-host=HOST --mysql-db=sbtest --max-time=7200 --max-requests=0 run | tee -a au.${i}.oltp.txt
 	done
+
+Results
+-------
+
+.. image:: aurora-sysbench-201511/Aurora-timeline.png
+	:width: 800px
+	:height: 600px
