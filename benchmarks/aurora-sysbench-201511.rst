@@ -119,6 +119,8 @@ Appendix
 
 Percona Server my.cnf file:
 
+::
+
 	[mysqld]
 
 	table-open-cache-instances=32
