@@ -103,7 +103,8 @@ Results (averaged) Percona Server vs Amazon Aurora, in relation to datasize
 
 Results in tabular format:
 
-I also add `ops cost` column, which is `instance_cost_per_month`/`ops`
+I also add `ops cost` column, which is `instance_cost_per_month`/`ops`:
+
 
 =========  =====  ================  ========= ==========
 Server      Size  workload               ops   ops cost
