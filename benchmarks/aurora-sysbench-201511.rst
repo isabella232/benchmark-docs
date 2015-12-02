@@ -101,7 +101,7 @@ Results (averaged) Percona Server vs Amazon Aurora, in relation to datasize
 	:width: 800px
 	:height: 800px
 
-Results in tabular format, where I also add `ops cost` column, which is calculates as `instance_cost_per_month`/`ops`:
+Results in tabular format, where I also add `ops cost` column, which is calculates as `instance_cost_per_month`/`ops` (less is better):
 
 
 =========  =====  ================  =========  =========
@@ -195,6 +195,8 @@ There are few points to highlight:
 
 Appendix
 --------
+
+`Raw results and scripts <https://github.com/Percona-Lab/benchmark-results/tree/aurora-sysbench-201511>`_
 
 Percona Server my.cnf file:
 
