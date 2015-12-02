@@ -103,83 +103,84 @@ Results (averaged) Percona Server vs Amazon Aurora, in relation to datasize
 
 Results in tabular format:
 
+I also add `ops cost` column, which is `instance_cost_per_month`/`ops`
 
-=========  =====  ================  =========
-Server      Size  workload               ops
-=========  =====  ================  =========
-aurora      1000  oltp              1548.6490
-ps          1000  oltp              2894.6190
-ps-io2000   1000  oltp              2903.5302
-ps-io3000   1000  oltp              2889.8827
-aurora      2500  oltp              1653.0761
-ps          2500  oltp              2009.9911
-ps-io2000   2500  oltp              2809.9707
-ps-io3000   2500  oltp              2783.0859
-aurora      5000  oltp              1340.6739
-ps          5000  oltp               955.1150
-ps-io2000   5000  oltp              1452.4108
-ps-io3000   5000  oltp              2132.9517
-aurora     10000  oltp              1139.2001
-ps         10000  oltp               596.4517
-ps-io2000  10000  oltp               912.3408
-ps-io3000  10000  oltp              1420.1322
-aurora     25000  oltp               919.9039
-ps         25000  oltp               418.1550
-ps-io2000  25000  oltp               620.7486
-ps-io3000  25000  oltp               964.7347
-aurora     50000  oltp               824.9817
-ps         50000  oltp               340.6678
-ps-io2000  50000  oltp               509.2594
-ps-io3000  50000  oltp               782.1511
-aurora      1000  update_index      1541.7061
-ps          1000  update_index      3230.3314
-ps-io2000   1000  update_index      4228.8192
-ps-io3000   1000  update_index      4279.5530
-aurora      2500  update_index      1440.2293
-ps          2500  update_index      2062.2836
-ps-io2000   2500  update_index      3105.0119
-ps-io3000   2500  update_index      3943.8099
-aurora      5000  update_index      1366.3545
-ps          5000  update_index      1492.3974
-ps-io2000   5000  update_index      2315.1324
-ps-io3000   5000  update_index      3465.8786
-aurora     10000  update_index      1296.2791
-ps         10000  update_index      1189.4472
-ps-io2000  10000  update_index      1847.5573
-ps-io3000  10000  update_index      2789.7427
-aurora     25000  update_index      1209.9782
-ps         25000  update_index       938.9404
-ps-io2000  25000  update_index      1441.1059
-ps-io3000  25000  update_index      2209.2510
-aurora     50000  update_index      1140.1554
-ps         50000  update_index       804.7809
-ps-io2000  50000  update_index      1230.8842
-ps-io3000  50000  update_index      1881.0907
-aurora      1000  update_non_index  2029.6650
-ps          1000  update_non_index  3882.0086
-ps-io2000   1000  update_non_index  4181.7776
-ps-io3000   1000  update_non_index  4483.4039
-aurora      2500  update_non_index  2070.1151
-ps          2500  update_non_index  3388.3528
-ps-io2000   2500  update_non_index  4247.6228
-ps-io3000   2500  update_non_index  4379.8502
-aurora      5000  update_non_index  2047.9839
-ps          5000  update_non_index  2114.0799
-ps-io2000   5000  update_non_index  3359.1397
-ps-io3000   5000  update_non_index  4045.8934
-aurora     10000  update_non_index  1969.5656
-ps         10000  update_non_index  1531.5859
-ps-io2000  10000  update_non_index  2372.8680
-ps-io3000  10000  update_non_index  3719.5061
-aurora     25000  update_non_index  1777.8730
-ps         25000  update_non_index  1197.7339
-ps-io2000  25000  update_non_index  1780.2134
-ps-io3000  25000  update_non_index  2755.3000
-aurora     50000  update_non_index  1709.5230
-ps         50000  update_non_index  1072.4871
-ps-io2000  50000  update_non_index  1428.6931
-ps-io3000  50000  update_non_index  2259.8432
-=========  =====  ================  =========
+=========  =====  ================  ========= ==========
+Server      Size  workload               ops   ops cost
+=========  =====  ================  ========= ==========
+aurora      1000  oltp              1548.6490  0.2010785
+ps          1000  oltp              2894.6190  0.0727557
+ps-io2000   1000  oltp              2903.5302  0.1216106
+ps-io3000   1000  oltp              2889.8827  0.1446772
+aurora      2500  oltp              1653.0761  0.1883761
+ps          2500  oltp              2009.9911  0.1047766
+ps-io2000   2500  oltp              2809.9707  0.1256597
+ps-io3000   2500  oltp              2783.0859  0.1502289
+aurora      5000  oltp              1340.6739  0.2322712
+ps          5000  oltp               955.1150  0.2204970
+ps-io2000   5000  oltp              1452.4108  0.2431130
+ps-io3000   5000  oltp              2132.9517  0.1960194
+aurora     10000  oltp              1139.2001  0.2733497
+ps         10000  oltp               596.4517  0.3530881
+ps-io2000  10000  oltp               912.3408  0.3870264
+ps-io3000  10000  oltp              1420.1322  0.2944092
+aurora     25000  oltp               919.9039  0.3385136
+ps         25000  oltp               418.1550  0.5036410
+ps-io2000  25000  oltp               620.7486  0.5688293
+ps-io3000  25000  oltp               964.7347  0.4333834
+aurora     50000  oltp               824.9817  0.3774629
+ps         50000  oltp               340.6678  0.6181976
+ps-io2000  50000  oltp               509.2594  0.6933597
+ps-io3000  50000  oltp               782.1511  0.5345514
+aurora      1000  update_index      1541.7061  0.2019840
+ps          1000  update_index      3230.3314  0.0651945
+ps-io2000   1000  update_index      4228.8192  0.0834985
+ps-io3000   1000  update_index      4279.5530  0.0976971
+aurora      2500  update_index      1440.2293  0.2162156
+ps          2500  update_index      2062.2836  0.1021198
+ps-io2000   2500  update_index      3105.0119  0.1137194
+ps-io3000   2500  update_index      3943.8099  0.1060142
+aurora      5000  update_index      1366.3545  0.2279057
+ps          5000  update_index      1492.3974  0.1411152
+ps-io2000   5000  update_index      2315.1324  0.1525183
+ps-io3000   5000  update_index      3465.8786  0.1206332
+aurora     10000  update_index      1296.2791  0.2402260
+ps         10000  update_index      1189.4472  0.1770570
+ps-io2000  10000  update_index      1847.5573  0.1911172
+ps-io3000  10000  update_index      2789.7427  0.1498705
+aurora     25000  update_index      1209.9782  0.2573600
+ps         25000  update_index       938.9404  0.2242954
+ps-io2000  25000  update_index      1441.1059  0.2450202
+ps-io3000  25000  update_index      2209.2510  0.1892497
+aurora     50000  update_index      1140.1554  0.2731207
+ps         50000  update_index       804.7809  0.2616861
+ps-io2000  50000  update_index      1230.8842  0.2868670
+ps-io3000  50000  update_index      1881.0907  0.2222647
+aurora      1000  update_non_index  2029.6650  0.1534243
+ps          1000  update_non_index  3882.0086  0.0542503
+ps-io2000   1000  update_non_index  4181.7776  0.0844378
+ps-io3000   1000  update_non_index  4483.4039  0.0932550
+aurora      2500  update_non_index  2070.1151  0.1504264
+ps          2500  update_non_index  3388.3528  0.0621541
+ps-io2000   2500  update_non_index  4247.6228  0.0831289
+ps-io3000   2500  update_non_index  4379.8502  0.0954599
+aurora      5000  update_non_index  2047.9839  0.1520520
+ps          5000  update_non_index  2114.0799  0.0996178
+ps-io2000   5000  update_non_index  3359.1397  0.1051162
+ps-io3000   5000  update_non_index  4045.8934  0.1033394
+aurora     10000  update_non_index  1969.5656  0.1581059
+ps         10000  update_non_index  1531.5859  0.1375045
+ps-io2000  10000  update_non_index  2372.8680  0.1488073
+ps-io3000  10000  update_non_index  3719.5061  0.1124074
+aurora     25000  update_non_index  1777.8730  0.1751531
+ps         25000  update_non_index  1197.7339  0.1758320
+ps-io2000  25000  update_non_index  1780.2134  0.1983470
+ps-io3000  25000  update_non_index  2755.3000  0.1517439
+aurora     50000  update_non_index  1709.5230  0.1821561
+ps         50000  update_non_index  1072.4871  0.1963660
+ps-io2000  50000  update_non_index  1428.6931  0.2471489
+ps-io3000  50000  update_non_index  2259.8432  0.1850128
+=========  =====  ================  =========  =========
 
 
 Observations
