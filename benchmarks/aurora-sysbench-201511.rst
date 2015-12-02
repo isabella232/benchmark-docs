@@ -24,7 +24,7 @@ Data Sizes
 * **Testing sizes**. For benchmarks, we vary the maximum amount of rows used by sysbench: 1mln, 2.5mln, 5mln, 10mln, 25mln, 50mln.
 
 In the chart, the results are marked in thousands of rows: 1000, 2500, 5000, 10000, 25000, 50000.
-In other words, "1000" corresponds to 1mln of rows.
+In other words, "1000" corresponds to 1mln rows.
 
 Estimated datasizes:
 
