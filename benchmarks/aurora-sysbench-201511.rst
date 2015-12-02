@@ -1,4 +1,4 @@
-.. _aurora-sysbench-2015:
+.. _aurora-sysbench-201511:
 
 ================================
 Amazon Aurora Sysbench benchmark
